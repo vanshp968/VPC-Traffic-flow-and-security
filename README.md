@@ -75,8 +75,8 @@ The route in my route table that directed internet-bound traffic to my internet 
 Security groups are like security guards that monitor both inbound and outbound traffic at the resource level ie. every single resource in a subnet/VPC has a security group.
 
 Security groups control traffic flow using two types of rules:
-* Inbound rules are the rules that restrict inbound traffic eg. user visiting a web app I’m hosting.
-* Outbound rules are the rules that monitor/restrict outbound traffic eg. my web app requesting data from a public source.
+* **Inbound rules** are the rules that restrict inbound traffic eg. user visiting a web app I’m hosting.
+* **Outbound rules** are the rules that monitor/restrict outbound traffic eg. my web app requesting data from a public source.
 
 By default, an outbound rule will allow all outbound traffic.
 
@@ -89,7 +89,7 @@ I also configured an inbound rule that allows all inbound HTTP traffic.
 
 Network ACLs are like community policemen that secures my network at a subnet level.
 
-The difference between a security group and a network ACL is their scope i.e a security groups secures my network at resource level, while network ACLS secures my network at the subnet level.
+The difference between a security group and a network ACL is their scope i.e a _security groups_ secures my network at **resource level**, while _network ACLS_ secures my network at the **subnet level**.
 
 Having both network ACLs and security groups is a good security best practice because it creates a dual layer of security that makes sure inbound/outbound traffic go through at least two checks.
 
@@ -105,7 +105,7 @@ My network ACL’s outbound rule
 <img width="866" alt="Screenshot 2024-07-04 at 7 39 37 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/77f19ee7-3cd5-4be7-92cc-655d281c6ed5">
 
 
-## Key Learnings
+## Key Learnings:
 
 * I Learn how to set up a virtual network environment in AWS, defining IP address ranges and configuring subnets to segregate resources effectively.
 * I understand the process of creating an internet gateway and associating it with your VPC to enable communication with external networks securely.
