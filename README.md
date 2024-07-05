@@ -6,8 +6,6 @@ You'll dive into the core of AWS networking by creating your very own Virtual Pr
 
 Setting up and managing a VPC is a vital skill for anyone looking to master cloud infrastructure. Today, you'll learn how to set up and configure a VPC from scratch.
 
-<img width="725" alt="Screenshot 2024-07-04 at 10 37 30 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/0710c780-d72c-401f-9308-b763f5904a02">
-
 ## Introduction
 
 #### What is Amazon VPC and how is it useful?
@@ -23,6 +21,7 @@ Lets get ready:
 5 - 👮‍♀️ Create a security group.\
 6 - 📋 Create a Network ACL (Network Access Control List).
 
+  <img width="725" alt="Screenshot 2024-07-04 at 10 37 30 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/0710c780-d72c-401f-9308-b763f5904a02">
 
 ## Step: 1 My first VPC
 
@@ -32,6 +31,8 @@ There was already a default VPC in my account ever since my AWS account was crea
 
 To set up my VPC, I had to define an IPv4 CIDR, which means a range of IP addresses that my VPC can allocate to the resources deploy into my VPC.
 
+<img width="1179" alt="Screenshot 2024-07-04 at 8 00 23 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/6092c6c1-0eab-4e61-8165-f8d3dc8b2c2e">
+
 ## Step: 2 Subnets
 
 Subnets are subsections of my VPC, just like how neighbourhood are subsections of a city.
@@ -40,6 +41,8 @@ There are already subnets existing in my account, one for every Availability zon
 
 I named my subnet myPublic Sub, but that doesn’t automatically make my subnet a public subnet. For a subnet to be considered public, it has to connect to an internal gateway.
 
+<img width="1394" alt="Screenshot 2024-07-04 at 8 06 38 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/4b947895-f079-4e4c-8bb4-5b27a4ae7f83">
+
 ## Step: 3 Internet Gateway
 
 Internet gateway are the key VPC components that allows internet access for the resources in my VPC/subnet. An internet gateway is also how users in the public can access my resources in a public subnet.
@@ -47,6 +50,8 @@ Internet gateway are the key VPC components that allows internet access for the 
 Attaching an internet gateway to a VPC means it can now access the internet. The EC2 instances with public IP addresses also become accessible to users, so your applications hosted those servers become public too.
 
 While I’ve set up an internet gateway and attached it to a VPC, I still have to set up route tables. Route tables will help EC2 instances or other resources in my VPC to find their way to the internet gateway that is attached to my VPC.
+
+<img width="955" alt="Screenshot 2024-07-04 at 6 02 16 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/5f85ddc5-0575-4c84-a6e4-95f451ddf778">
 
 ## Step: 4 Routing table
 
@@ -60,6 +65,11 @@ A route table is made up of routes, which are defined by its destination and tar
 
 The route in my route table that directed internet-bound traffic to my internet gateway had a destination of 0.0.0.0/0 and a target of my VanshP IG (internet gateway)
 
+<img width="879" alt="Screenshot 2024-07-04 at 6 28 26 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/699ce1af-a09e-4b31-8871-5df899f300fd">
+
+<img width="868" alt="Screenshot 2024-07-04 at 6 29 34 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/3ed3aed7-54e8-4ff8-9f6f-a8b022508896">
+
+
 ## Step: 5 Security Groups
 
 Security groups are like security guards that monitor both inbound and outbound traffic at the resource level ie. every single resource in a subnet/VPC has a security group.
@@ -71,6 +81,9 @@ Security groups control traffic flow using two types of rules:
 By default, an outbound rule will allow all outbound traffic.
 
 I also configured an inbound rule that allows all inbound HTTP traffic.
+
+<img width="854" alt="Screenshot 2024-07-04 at 7 05 36 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/c3d41c5d-782b-488e-b69e-9ac4aa9a917e">
+<img width="1314" alt="Screenshot 2024-07-04 at 7 11 58 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/bca1a429-4426-4a89-95d3-1a7fe2292dfd">
 
 ## Step: 6 Network ACLs
 
@@ -84,7 +97,14 @@ Similar to security groups, network ACLs use inbound and outbound rules:
 * A default network ACL’s inbound rule is set up to allow all incoming traffic.
 * A default network ACL’s outbound rule is set up to allow all outgoing traffic.
 * In contrast, a custom ACL’s inbound and outbound rules are automatically set to deny all incoming/outgoing traffic.
-  
+
+My network ACL’s inbound rule
+<img width="864" alt="Screenshot 2024-07-04 at 7 38 42 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/b47ca89b-f204-4ba9-8753-50ab227e17dd">
+
+My network ACL’s outbound rule
+<img width="866" alt="Screenshot 2024-07-04 at 7 39 37 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/77f19ee7-3cd5-4be7-92cc-655d281c6ed5">
+
+
 ## Key Learnings
 
 * I Learn how to set up a virtual network environment in AWS, defining IP address ranges and configuring subnets to segregate resources effectively.
