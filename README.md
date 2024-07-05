@@ -6,7 +6,7 @@ You'll dive into the core of AWS networking by creating your very own Virtual Pr
 
 Setting up and managing a VPC is a vital skill for anyone looking to master cloud infrastructure. Today, you'll learn how to set up and configure a VPC from scratch.
 
-
+<img width="725" alt="Screenshot 2024-07-04 at 10 37 30 PM" src="https://github.com/vanshp968/VPC-Traffic-flow-and-security/assets/147680002/0710c780-d72c-401f-9308-b763f5904a02">
 
 ## Introduction
 
